@@ -45,7 +45,7 @@ p{font-size:13px;color:var(--mut);margin:8px 0 0}
 <p>Jika tombol unduh tidak berfungsi, tekan lama pada gambar lalu pilih simpan.</p>
 </div>
 </div>
-<canvas id="cv" width="900" height="620" style="display:none"></canvas>
+<canvas id="cv" width="2700" height="1860" style="display:none"></canvas>
 <script>
 var cv=document.getElementById('cv'),cx=cv.getContext('2d'),out=document.getElementById('out');
 var F='"Arial Narrow","Liberation Sans Narrow",Arial,Helvetica,sans-serif';
@@ -58,6 +58,7 @@ function fit(txt,y,size,maxW,ul){
 }
 function draw(){
   var col=document.getElementById('col').value;
+  cx.setTransform(3,0,0,3,0,0);
   cx.clearRect(0,0,900,620);
   if(!document.getElementById('tr').checked){cx.fillStyle='#fff';cx.fillRect(0,0,900,620);}
   cx.strokeStyle=col;cx.lineWidth=6;cx.strokeRect(20,20,860,580);
